@@ -11,8 +11,9 @@ An open source dynamic and colorful vlog site built with Express, EJS, and Boots
 ## Screenshots
 
 ![Screenshot](public/images/index.png)
-![Screenshot](public/images/add.png)
-![Screenshot](public/images/edit.png)
+<br><br>
+![Screenshot](public/images/add.png)<br><br>
+![Screenshot](public/images/edit.png)<br><br>
 
 ## Installation
 
