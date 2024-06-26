@@ -2,28 +2,30 @@
 <div class="jumbotron text-center">
     <h1 class="display-4">Welcome to Vlog Site</h1>
 </div>
-<% if(vlogs && vlogs.length > 0){ %>
-    <h2>Vlogs</h2>
-    <div class="row">
-    <% vlogs.forEach((vlog, index) => { %>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title"><%= vlog.title %></h3>
-                    <p class="card-text"><%= vlog.content %></p>
-                    <a href="/edit/<%= index %>" class="btn btn-primary btn-sm">Edit</a>
-                    <form action="/delete/<%= index %>" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+<div class="container">
+    <% if(vlogs && vlogs.length > 0){ %>
+        <h2>Vlogs</h2>
+        <div class="row">
+        <% vlogs.forEach((vlog, index) => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title"><%= vlog.title %></h3>
+                        <p class="card-text"><%= vlog.content %></p>
+                        <a href="/edit/<%= index %>" class="btn btn-primary btn-sm">Edit</a>
+                        <form action="/delete/<%= index %>" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+        <% }); %>
         </div>
-    <% }); %>
+    <% } else { %>
+        <h2 class="text-center">There are no vlogs to show</h2>
+    <% } %>
+    <div class="text-center mt-4">
+        <a href="add" class="btn btn-success btn-lg">Create a new vlog</a>
     </div>
-<% } else { %>
-    <h2 class="text-center">There are no vlogs to show</h2>
-<% } %>
-<div class="text-center mt-4">
-    <a href="add" class="btn btn-success">Create a new vlog</a>
 </div>
 <%- include("partials/footer.ejs") %>
